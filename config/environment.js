@@ -6,8 +6,8 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
-    host: 'https://johnny-appleseed.clientsecure.me',
-    clinicianID: 2,
+    host: process.env.HOST,
+    clinicianID: process.env.CLINICIAN_ID,
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
