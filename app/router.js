@@ -7,4 +7,8 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
+  this.route('scheduling', function() {
+    this.route('services');
+    this.route('offices');
+  });
 });

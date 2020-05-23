@@ -1,0 +1,11 @@
+{{#each @model as |cptCode|}}
+  <div>
+    {{cptCode.description}}
+  </div>
+  <LinkTo
+    @route="scheduling.offices"
+    @query={{hash cptCodeId=cptCode.id clinicianID=this.clinicianID}}
+  >
+    Select
+  </LinkTo>
+{{/each}}

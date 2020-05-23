@@ -12,6 +12,14 @@ You will need the following things properly installed on your computer.
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
+Because of **CORS** is not configured on API side
+we should run Chrome in `disable-web-security` mode,
+to do this run the following command:
+* MacOS:
+  `open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security`
+* Linux:
+  `google-chrome --disable-web-security`
+
 ## Installation
 
 * `git clone <repository-url>` this repository
@@ -39,19 +47,3 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `npm run lint:js`
 * `npm run lint:js -- --fix`
 
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
