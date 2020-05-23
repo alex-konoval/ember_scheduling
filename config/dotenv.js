@@ -1,4 +1,4 @@
-module.exports = function(_env) {
+module.exports = function() {
   return {
     clientAllowedKeys: ['HOST', 'CLINICIAN_ID'],
     failOnMissingKey: true

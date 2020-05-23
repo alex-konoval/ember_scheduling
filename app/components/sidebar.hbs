@@ -1,0 +1,26 @@
+<aside class="sidebar">
+  <div>
+    <div class="sidebar__step">Clinician</div>
+    <div class="sidebar__info">Rob Gross, MFT</div>
+  </div>
+  <div>
+    {{#if @appointment.cptCode}}
+      <div class="sidebar__step">Service</div>
+      <div class="sidebar__info">{{@appointment.cptCode.description}}</div>
+      <div class="sidebar__info">
+        {{pluralize @appointment.cptCode.duration "minute"}}
+      </div>
+    {{else}}
+      <div class="sidebar__step">Select a service</div>
+    {{/if}}
+  </div>
+  <div>
+    <div class="sidebar__step">Select a location</div>
+  </div>
+  <div>
+    <div class="sidebar__step">Select data & time</div>
+  </div>
+  <div>
+    <div class="sidebar__step">Your information</div>
+  </div>
+</aside>

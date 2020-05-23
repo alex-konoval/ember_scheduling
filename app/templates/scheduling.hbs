@@ -1,3 +1,10 @@
-<h1>Request an Appointment</h1>
+<div class="main-container">
+  <Header />
+  <div class="main-container__main">
+    <Sidebar @appointment={{@model}} />
 
-{{outlet}}
+    <div class="main-container__main--content">
+      {{outlet}}
+    </div>
+  </div>
+</div>

@@ -13,4 +13,10 @@ export default class SchedulingServicesRoute extends Route {
   model({ clinicianID }) {
     return this.store.query('cpt-code', { 'filter[clinicianId]': clinicianID });
   }
+
+  setupController(controller, model) {
+    const appointment = this.modelFor('scheduling');
+    controller.appointment = appointment;
+    super.setupController(controller, model);
+  }
 }

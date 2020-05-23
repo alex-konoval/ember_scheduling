@@ -1,0 +1,30 @@
+.sidebar {
+  height: 100%;
+  min-width: 15rem;
+
+  font-size: $sub-heading-size;
+  counter-reset: appointmant-stage;
+  padding: 2rem 1rem 0 1rem;
+
+  &__step {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    counter-increment: appointmant-stage;
+    line-height: 2.5rem;
+  }
+
+  &__info {
+    color: $info-color;
+    margin-left: 2.6rem;
+    line-height: 2rem;
+    max-width: 12rem;
+  }
+
+  &__step::before {
+    content: counter(appointmant-stage);
+    border: solid 2px black;
+    border-radius: 50%;
+    padding: 0.3rem 0.5rem;
+    margin-right: 0.5rem;
+  }
+}

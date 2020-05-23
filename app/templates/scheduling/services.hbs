@@ -1,11 +1,15 @@
 {{#each @model as |cptCode|}}
-  <div>
-    {{cptCode.description}}
+  <div class="service">
+    <div class="service__content">
+      <div class="service__content--description">
+        {{cptCode.description}}
+      </div>
+      <div class="service__content--duration">
+        {{pluralize cptCode.duration "minute"}}
+      </div>
+    </div>
+    <button type="button" {{on "click" (fn this.selectService cptCode)}}>
+      Select
+    </button>
   </div>
-  <LinkTo
-    @route="scheduling.offices"
-    @query={{hash cptCodeId=cptCode.id clinicianID=this.clinicianID}}
-  >
-    Select
-  </LinkTo>
 {{/each}}

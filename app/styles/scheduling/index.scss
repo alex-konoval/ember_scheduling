@@ -1,0 +1,18 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__main {
+    display: flex;
+    flex-grow: 1;
+    min-height: 100%;
+
+    &--content {
+      flex-grow: 3;
+      border-left: solid $border-width $border-color;
+      background-color: $main-background-color;
+      padding: 1.5rem;
+    }
+  }
+}
