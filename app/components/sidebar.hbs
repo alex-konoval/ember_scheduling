@@ -11,16 +11,20 @@
         {{pluralize @appointment.cptCode.duration "minute"}}
       </div>
     {{else}}
-      <div class="sidebar__step">Select a service</div>
+      <div class="sidebar__step active">Select a service</div>
     {{/if}}
   </div>
   <div>
-    <div class="sidebar__step">Select a location</div>
+    <div
+      class="sidebar__step {{if @appointment.cptCode "active" "disabled"}}"
+    >
+      Select a location
+    </div>
   </div>
   <div>
-    <div class="sidebar__step">Select data & time</div>
+    <div class="sidebar__step disabled">Select data & time</div>
   </div>
   <div>
-    <div class="sidebar__step">Your information</div>
+    <div class="sidebar__step disabled">Your information</div>
   </div>
 </aside>

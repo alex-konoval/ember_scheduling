@@ -11,6 +11,29 @@
     letter-spacing: 2px;
     counter-increment: appointmant-stage;
     line-height: 2.5rem;
+
+    &::before {
+      content: counter(appointmant-stage);
+      border: solid 2px black;
+      border-radius: 50%;
+      padding: 0.3rem 0.5rem;
+      margin-right: 0.5rem;
+    }
+
+    &.disabled {
+      color: $disabled-color;
+
+      &::before {
+        border-color: $disabled-color;
+      }
+    }
+
+    &.active {
+      &::before {
+        color: $info-color;
+        border-color: $info-color;
+      }
+    }
   }
 
   &__info {
@@ -18,13 +41,5 @@
     margin-left: 2.6rem;
     line-height: 2rem;
     max-width: 12rem;
-  }
-
-  &__step::before {
-    content: counter(appointmant-stage);
-    border: solid 2px black;
-    border-radius: 50%;
-    padding: 0.3rem 0.5rem;
-    margin-right: 0.5rem;
   }
 }
