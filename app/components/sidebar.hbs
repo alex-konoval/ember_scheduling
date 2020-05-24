@@ -1,30 +1,33 @@
 <aside class="sidebar">
   <div>
-    <div class="sidebar__step">Clinician</div>
+    <div data-test-clinician class="sidebar__step">Clinician</div>
     <div class="sidebar__info">Rob Gross, MFT</div>
   </div>
   <div>
     {{#if @appointment.cptCode}}
-      <div class="sidebar__step">Service</div>
-      <div class="sidebar__info">{{@appointment.cptCode.description}}</div>
-      <div class="sidebar__info">
+      <div data-test-service class="sidebar__step">Service</div>
+      <div data-test-service-description class="sidebar__info">
+        {{@appointment.cptCode.description}}
+      </div>
+      <div data-test-service-duration class="sidebar__info">
         {{pluralize @appointment.cptCode.duration "minute"}}
       </div>
     {{else}}
-      <div class="sidebar__step active">Select a service</div>
+      <div data-test-service class="sidebar__step active">Select a service</div>
     {{/if}}
   </div>
   <div>
     <div
+      data-test-location
       class="sidebar__step {{if @appointment.cptCode "active" "disabled"}}"
     >
       Select a location
     </div>
   </div>
   <div>
-    <div class="sidebar__step disabled">Select data & time</div>
+    <div data-test-time class="sidebar__step disabled">Select data & time</div>
   </div>
   <div>
-    <div class="sidebar__step disabled">Your information</div>
+    <div data-test-info class="sidebar__step disabled">Your information</div>
   </div>
 </aside>
