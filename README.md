@@ -10,6 +10,8 @@ You will need the following things properly installed on your computer.
 ## Installation
 
 * `npm install`
+* You should create `.env` file and set variables.
+For development you can copy values from `.env.sample`. 
 
 ## Running / Development
 
@@ -33,4 +35,3 @@ to do this run the following command:
 ### Linting
 
 * `npm run lint`
-
