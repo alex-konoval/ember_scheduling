@@ -1,44 +1,4 @@
 .offices {
   display: flex;
   flex-wrap: wrap;
-
-  .office {
-    background-color: $tail-background-color;
-    border-radius: 5px;
-    margin: 0.5rem;
-    padding: 1rem;
-
-    &__content {
-      display: flex;
-      flex-direction: column;
-
-      &--description {
-        font-size: $heading-size;
-        padding: 0.5rem;
-      }
-      &--details {
-        font-size: $sub-heading-size;
-        padding: 0.5rem;
-      }
-      &--phone {
-        font-size: $sub-heading-size;
-        padding: 0.5rem;
-      }
-    }
-  }
-
-  button {
-    background-color: $main-button-color;
-    color: $main-button-text-color;
-    font-size: $sub-heading-size;
-    border: none;
-    border-radius: 5px;
-    margin: 0.5rem;
-    width: 100%;
-  }
-
-  button:hover {
-    cursor: pointer;
-    background-color: lighten($main-button-color, 3%);
-  }
 }

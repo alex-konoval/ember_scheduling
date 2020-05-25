@@ -5,3 +5,17 @@ body {
   margin: 0;
   padding: 0;
 }
+
+button {
+  background-color: $main-button-color;
+  color: $main-button-text-color;
+  font-size: $sub-heading-size;
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: lighten($main-button-color, 3%);
+}

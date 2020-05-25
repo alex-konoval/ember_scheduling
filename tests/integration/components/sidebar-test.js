@@ -20,28 +20,23 @@ module('Integration | Component | sidebar', function(hooks) {
     await render(hbs`<Sidebar />`);
 
     // first step
-    const firstStep = this.element.querySelector('[data-test-clinician]');
-    assert.dom(firstStep).hasText('Clinician');
+    assert.dom('[data-test-clinician]').hasText('Clinician');
 
     // second step
-    const secondStep = this.element.querySelector('[data-test-service]');
-    assert.dom(secondStep).hasText('Select a service');
-    assert.dom(secondStep).hasClass('active');
+    assert.dom('[data-test-service]').hasText('Select a service');
+    assert.dom('[data-test-service]').hasClass('active');
 
     // third step
-    const thirdStep = this.element.querySelector('[data-test-location]');
-    assert.dom(thirdStep).hasText('Select a location');
-    assert.dom(thirdStep).hasClass('disabled');
+    assert.dom('[data-test-location]').hasText('Select a location');
+    assert.dom('[data-test-location]').hasClass('disabled');
 
     // fourth step
-    const fourthStep = this.element.querySelector('[data-test-time]');
-    assert.dom(fourthStep).hasText('Select data & time');
-    assert.dom(fourthStep).hasClass('disabled');
+    assert.dom('[data-test-time]').hasText('Select data & time');
+    assert.dom('[data-test-time]').hasClass('disabled');
 
     // fifth step
-    const fifthStep = this.element.querySelector('[data-test-info]');
-    assert.dom(fifthStep).hasText('Your information');
-    assert.dom(fifthStep).hasClass('disabled');
+    assert.dom('[data-test-info]').hasText('Your information');
+    assert.dom('[data-test-info]').hasClass('disabled');
   });
 
   test('it renders with appointment', async function(assert) {
@@ -54,31 +49,24 @@ module('Integration | Component | sidebar', function(hooks) {
     `);
 
     // first step
-    const firstStep = this.element.querySelector('[data-test-clinician]');
-    assert.dom(firstStep).hasText('Clinician');
+    assert.dom('[data-test-clinician]').hasText('Clinician');
 
     // second step
-    const secondStep = this.element.querySelector('[data-test-service]');
-    assert.dom(secondStep).hasText('Service');
-    assert.dom('[data-test-service-description]')
-      .hasText(appointmentStub.cptCode.description);
-    assert.dom('[data-test-service-duration]')
-      .hasText(`${appointmentStub.cptCode.duration} minutes`);
+    assert.dom('[data-test-service]').hasText('Service');
+    assert.dom('[data-test-service-description]').hasText(appointmentStub.cptCode.description);
+    assert.dom('[data-test-service-duration]').hasText(`${appointmentStub.cptCode.duration} minutes`);
 
     // third step
-    const thirdStep = this.element.querySelector('[data-test-location]');
-    assert.dom(thirdStep).hasText('Select a location');
-    assert.dom(thirdStep).hasClass('active');
+    assert.dom('[data-test-location]').hasText('Select a location');
+    assert.dom('[data-test-location]').hasClass('active');
 
     // fourth step
-    const fourthStep = this.element.querySelector('[data-test-time]');
-    assert.dom(fourthStep).hasText('Select data & time');
-    assert.dom(fourthStep).hasClass('disabled');
+    assert.dom('[data-test-time]').hasText('Select data & time');
+    assert.dom('[data-test-time]').hasClass('disabled');
 
     // fifth step
-    const fifthStep = this.element.querySelector('[data-test-info]');
-    assert.dom(fifthStep).hasText('Your information');
-    assert.dom(fifthStep).hasClass('disabled');
+    assert.dom('[data-test-info]').hasText('Your information');
+    assert.dom('[data-test-info]').hasClass('disabled');
   });
 
   test('it renders service duration 1 with singular', async function(assert) {
@@ -91,11 +79,8 @@ module('Integration | Component | sidebar', function(hooks) {
       />
     `);
 
-    const secondStep = this.element.querySelector('[data-test-service]');
-    assert.dom(secondStep).hasText('Service');
-    assert.dom('[data-test-service-description]')
-      .hasText(appointmentStub.cptCode.description);
-    assert.dom('[data-test-service-duration]')
-      .hasText(`1 minute`);
+    assert.dom('[data-test-service]').hasText('Service');
+    assert.dom('[data-test-service-description]').hasText(appointmentStub.cptCode.description);
+    assert.dom('[data-test-service-duration]').hasText(`1 minute`);
   });
 });

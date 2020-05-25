@@ -1,15 +1,6 @@
 {{#each @model as |cptCode|}}
-  <div class="service">
-    <div class="service__content">
-      <div class="service__content--description">
-        {{cptCode.description}}
-      </div>
-      <div class="service__content--duration">
-        {{pluralize cptCode.duration "minute"}}
-      </div>
-    </div>
-    <button type="button" {{on "click" (fn this.selectService cptCode)}}>
-      Select
-    </button>
-  </div>
+  <Service
+    @service={{cptCode}}
+    @selectService={{this.selectService}}
+  />
 {{/each}}

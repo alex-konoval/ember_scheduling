@@ -1,0 +1,16 @@
+<div class="office">
+  <div class="office__content">
+    <div data-test-name class="office__content--description">
+      {{@office.name}}
+    </div>
+    <div class="office__content--details">
+      <p  data-test-street>{{@office.street}}</p>
+      <p  data-test-address>{{@office.city}}, {{@office.state}} {{@office.zip}}</p>
+    </div>
+    <div data-test-phone class="office__content--phone">
+      {{@office.phone}}
+    </div>
+
+    <button type="button">Select</button>
+  </div>
+</div>

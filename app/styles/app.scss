@@ -2,8 +2,9 @@
 @import "base";
 
 @import "scheduling/index";
-@import "scheduling/services";
 @import "scheduling/offices";
 
 @import "components/header";
 @import "components/sidebar";
+@import "components/office";
+@import "components/service";

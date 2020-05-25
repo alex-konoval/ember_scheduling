@@ -1,0 +1,13 @@
+<div class="service">
+  <div class="service__content">
+    <div data-test-description class="service__content--description">
+      {{@service.description}}
+    </div>
+    <div data-test-duration class="service__content--duration">
+      {{pluralize @service.duration "minute"}}
+    </div>
+  </div>
+  <button type="button" {{on "click" (fn @selectService @service)}}>
+    Select
+  </button>
+</div>
