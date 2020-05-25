@@ -11,7 +11,7 @@ You will need the following things properly installed on your computer.
 
 * `npm install`
 * You should create `.env` file and set variables.
-For development you can copy values from `.env.sample`. 
+For development you can copy values from `.sample.env`. 
 
 ## Running / Development
 
