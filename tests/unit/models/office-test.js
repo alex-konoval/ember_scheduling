@@ -1,13 +1,19 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
+import { run } from '@ember/runloop';
 
 module('Unit | Model | office', function(hooks) {
   setupTest(hooks);
 
-  // Replace this with your real tests.
-  test('it exists', function(assert) {
-    let store = this.owner.lookup('service:store');
-    let model = store.createRecord('office', {});
-    assert.ok(model);
+  test('returns correct address', function(assert) {
+    const office = run(() =>
+      this.owner.lookup('service:store').createRecord('office', {
+        city: 'Washington',
+        state: 'WA',
+        zip: '1000'
+      })
+    );
+
+    assert.equal(office.address, 'Washington, WA 1000');
   });
 });

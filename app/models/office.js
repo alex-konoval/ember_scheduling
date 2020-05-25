@@ -1,4 +1,5 @@
 import Model, { attr, belongsTo } from '@ember-data/model';
+import { computed } from '@ember/object';
 
 export default class OfficeModel extends Model {
   @attr('string') city;
@@ -10,4 +11,9 @@ export default class OfficeModel extends Model {
   @attr('boolean') isVideo;
 
   @belongsTo('cpt-code') cptCode;
+
+  @computed('city', 'state', 'zip')
+  get address() {
+    return `${this.city}, ${this.state} ${this.zip}`;
+  }
 }

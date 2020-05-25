@@ -2,6 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
+import { run } from '@ember/runloop';
 
 module('Integration | Component | service', function(hooks) {
   setupRenderingTest(hooks);
@@ -9,10 +10,12 @@ module('Integration | Component | service', function(hooks) {
   let serviceStub;
 
   hooks.beforeEach(function() {
-    serviceStub = {
-      description: 'Help client',
-      duration: 10
-    };
+    serviceStub = run(() =>
+      this.owner.lookup('service:store').createRecord('cpt-code', {
+        description: 'Help client',
+        duration: 10
+      })
+    );
   });
 
   test('it renders correctly', async function(assert) {

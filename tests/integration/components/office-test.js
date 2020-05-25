@@ -2,6 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
+import { run } from '@ember/runloop';
 
 module('Integration | Component | office', function(hooks) {
   setupRenderingTest(hooks);
@@ -9,14 +10,16 @@ module('Integration | Component | office', function(hooks) {
   let officeStub;
 
   hooks.beforeEach(function() {
-    officeStub = {
-      name: 'Dr. Mark',
-      street: 'Defense Pentagon',
-      city: 'Washington',
-      state: 'WA',
-      zip: '1000',
-      phone: '(703) 571-3343',
-    };
+    officeStub = run(() =>
+      this.owner.lookup('service:store').createRecord('office', {
+        name: 'Dr. Mark',
+        street: 'Defense Pentagon',
+        city: 'Washington',
+        state: 'WA',
+        zip: '1000',
+        phone: '(703) 571-3343',
+      })
+    );
   });
 
   test('it renders', async function(assert) {
