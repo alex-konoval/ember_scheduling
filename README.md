@@ -15,7 +15,7 @@ Because of **CORS** is not configured on API side
 we should run Chrome in `disable-web-security` mode,
 to do this run the following command:
 * MacOS:
-  `open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security`
+  `open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security --disable-site-isolation-trials`
 * Linux:
   `google-chrome --disable-web-security`
 
